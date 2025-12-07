@@ -529,13 +529,13 @@ public enum ExactTimes: Int, Codable {
 
 public struct Transfer: Codable, FromCSVLine {
     public let fromStopId: String
-    public let topStopId: String
+    public let toStopId: String
     public let transferType: TransferType
     public let minTransferTime: Int?
 
     public init(line: CSVLine) {
         fromStopId = line["from_stop_id"]!
-        topStopId = line["top_stop_id"]!
+        toStopId = line["to_stop_id"]!
         transferType = TransferType.from(line["transfer_type"]!)
         minTransferTime = Int.from(line["min_transfer_time"])
     }
